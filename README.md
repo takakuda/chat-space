@@ -14,7 +14,7 @@
 
 ### ・has_many :messages
 
-### ・has_many :group,through :user_groups table
+### ・has_many :groups,through :groups_users
 
 
 ## messages table
@@ -37,14 +37,16 @@
 |:-------------|-----------:|:--------------------------------:|
 |user_id       |integer     |foreign_key: true                 |
 |group_id      |integer     |foreign_key: true                 |
+|name          |string      |null: false                       |
 
 ## group table
 
-### ・has_many :users, through :user_groups table
+### ・has_many :users, through :groups_users
 
 ### .has_many :messages
 
-## user_groups table
+## groups_users table
 |    colum     |     type   |              option              |
 |user_id       |integer     |foreign_key: true                 |
 |group_id      |integer     |foreign_key: true                 |
+
