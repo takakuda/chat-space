@@ -13,7 +13,7 @@
 
 ### ・has_many :messages
 
-### ・has_many :groups,through :chat_groups
+### ・has_many :groups,through :group_users
 
 
 ## messages table
@@ -39,11 +39,11 @@
 
 ## group table
 
-### ・has_many :users, through :chat_groups
+### ・has_many :users, through :group_users
 
 ### .has_many :messages
 
-## chat_groups table
+## group_users table
 |    colum     |     type   |              option              |
 |id            |integer     |                                  |
 |user_id       |integer     |foreign_key: true                 |
