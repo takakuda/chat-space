@@ -7,16 +7,17 @@
 |    colum    |    type    |             option                |
 |:------------|-----------:|:---------------------------------:|
 |name         |string      |index: true,null: false,unque: true|
-|mail         |string      |null: false                        |
+|user_id      |integer     |foreign_key: true                  |
+|group_id     |integer     |foreign_key: true                  |
 
 ## Association
 
-### ・has_many :chat
+### ・has_many :messages
 
-### ・has_many :group
+### ・has_many :group,through :user_groups table
 
 
-## chats table
+## messages table
 |     colum    |    type     |             option              |
 |:-------------|------------:|:-------------------------------:|
 |body          |text         |                                 |
@@ -28,7 +29,7 @@
 
 ### ・belongs_to :users
 
-### ・belongs_to :group
+### ・belongs_to :groups
 
 
 ## groups table
@@ -39,6 +40,11 @@
 
 ## group table
 
-### ・belongs_to :user
+### ・has_many :users, through :user_groups table
 
-### .has_many :chat
+### .has_many :messages
+
+## user_groups table
+|    colum     |     type   |              option              |
+|user_id       |integer     |foreign_key: true                 |
+|group_id      |integer     |foreign_key: true                 |
