@@ -6,16 +6,15 @@
 
 |    colum    |    type    |             option                |
 |:------------|-----------:|:---------------------------------:|
-|id           |integer     |                                   |
 |name         |string      |index: true,null: false,unque: true|
 
 ## Association
 
-### ・has_many :messages
+- ・has_many :messages
 
-### ・has_many :groups,through :group_users
+- ・has_many :group_users
 
-### ・has_many :group_users
+- ・has_many :groups,through :group_users
 
 
 ## messages table
@@ -28,29 +27,27 @@
 
 ## Association
 
-### ・belongs_to :users
+- ・belongs_to :user
 
-### ・belongs_to :groups
+- ・belongs_to :group
 
 
 ## groups table
 |   colum      |    type    |              option              |
 |:-------------|-----------:|:--------------------------------:|
-|id            |integer     |                                  |
-|name          |integer     | null:false,unique:true           |
+|name          |integer     | null:false                       |
 
 ## group table
 
-### ・has_many :users, through :group_users
+- ・has_many :messages
 
-### ・has_many :messages
+- ・has_many :group_users
 
-### ・has_many :group_users
+- ・has_many :users, through :group_users
 
 ## group_users table
 |    colum     |     type   |              option              |
 |:-------------|-----------:|:--------------------------------:|
-|id            |integer     |                                  |
 |user_id       |references  |foreign_key: true                 |
 |group_id      |references  |foreign_key: true                 |
 
