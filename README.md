@@ -22,6 +22,7 @@
 |:-------------|------------:|:-------------------------------:|
 |body          |text         |                                 |
 |image         |string       |                                 |
+
 |user_id       |references   |foreign_key: true                |
 |group_id      |references   |foreign_key: true                |
 
@@ -30,6 +31,8 @@
 - ・belongs_to :user
 
 - ・belongs_to :group
+
+
 
 
 ## groups table
@@ -50,4 +53,5 @@
 |:-------------|-----------:|:--------------------------------:|
 |user_id       |references  |foreign_key: true                 |
 |group_id      |references  |foreign_key: true                 |
+
 
