@@ -23,7 +23,7 @@
 |body          |text         |                                 |
 |image         |string       |                                 |
 |user_id       |references   |foreign_key: true                |
-|group_id      |deferences   |foreign_key: true                |
+|group_id      |references   |foreign_key: true                |
 
 ## Association
 
