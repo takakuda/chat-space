@@ -1,0 +1,40 @@
+%header
+  .p チャットグループが作成されました。
+
+.left_contents
+  .name_contents
+    .h2 takakuda
+    .i.fa.fa-pencil-square-o.fa-2x{"aria-hidden" => "true"}
+    .i.fa.fa-cog.fa-2x{"aria-hidden" => "true"}
+
+
+  .messages_contents
+    .p2 aaaaaaaaaaaa
+    .p3 まだメッセージはありません。
+
+    .p4 sampleグループ
+    .p5 まだメッセージはありません
+
+.right_contents
+  .group_contents
+    .edit_button
+      %input.button_edit{ type: :submit, value: "EDIT"}
+    .h3 sampleグループ
+    .p6 member
+  .chat_contents
+    .h4 takakuda kei
+    .p 2017/05/01 18:03:47
+    .p1 なるほど
+    .h4 kei takakuda
+    .p 2017/05/03 05:04:54
+    .p1 もう18時
+    .h4 takakuda tomizou
+    .p 2017/05/01 19:30:57
+    .p1 頑張れ
+
+.bottom_contents
+  .send_box
+    %input.message_area{ type: :text }
+
+    .send_button
+      %input.button_send{ type: :submit, value: "send" }

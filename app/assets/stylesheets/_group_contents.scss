@@ -1,0 +1,30 @@
+.group_contents {
+  height: 128px;
+  background-color: #FFF5EE;
+
+
+  .h3 {
+    font-size: 20px;
+     padding-top: 50px;
+     padding-left: 40px;
+  }
+  .p6 {
+    color: #999999;
+    size: 12px;
+    line-height: 15px;
+    padding-bottom: 46px;
+    padding-left: 40px;
+  }
+  .edit_button {
+    padding-right: 40px;
+    margin-top: 50px;
+    height: 40px;
+    width: 60px;
+    float: right;
+  }
+  .button_edit {
+    height: 40px;
+    width: 60px;
+    background-color: #FFA500;
+  }
+}
