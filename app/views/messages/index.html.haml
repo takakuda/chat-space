@@ -4,8 +4,8 @@
 .left_contents
   .--name_contents
     .__user-name takakuda
-    .__i.fa.fa-pencil-square-o.fa-2x{"aria-hidden" => "true"}
-    .__i.fa.fa-cog.fa-2x{"aria-hidden" => "true"}
+    .__i.fa.fa-pencil-square-o.fa-lg{"aria-hidden" => "true"}
+    .__i.fa.fa-cog.fa-lg{"aria-hidden" => "true"}
 
 
   .--messages_contents
@@ -18,7 +18,8 @@
 .right_contents
   .--group_contents
     .--edit_button
-      %input.button_edit{ type: :submit, value: "EDIT"}
+      %input.button_edit{:style => "background:white;color:#00FFFF;", :type => "submit", :value => "Edit"}/
+
     .__group-name sampleグループ
     .__member member
   .--chat_contents
@@ -37,9 +38,11 @@
 
     %input.message_area{ type: :text }
 
-    %i.fa.fa-file-image-o{"aria-hidden" => "true"}
+    .box
+      .i.fa.fa-file-image-o.fa-lg{"aria-hidden" => "true"}
 
 
 
     .__send_button
-      %input.button_send{ type: :submit, value: "send" }
+      .button_send
+        %input.button_send{:style => "background:white;color:#00FFFF;", :type => "submit", :value => "Send"}/

@@ -16,27 +16,33 @@
     width: 600px;
     float: left;
   }
-  .i.fa.fa-picture-o {
+
+  .box {
     display: inline;
-    padding-left: 600px;
-    text-height: middle;
+    background-color: white;
+    float: left;
   }
-}
+
+  .i.fa.fa-file-image-o {
+    position: absolute;
+    right: 140px;
+    top: 780px;
+  }
 .__send_button {
-  height: 50px;
+  height: 80px;
   width: 80px;
   float: right;
   padding-right: 40px;
   background-color: white;
+  border-color: #00FFFF;
 
-    .button_send {
-  height: 50px;
-  width: 80px;
-background-color: #00FFFF;
-border: 0;
-  background: none;
-  background-color: #00FFFF;
+   .button_send {
+    height: 50px;
+    width: 80px;
+    border-color: #00FFFF;
+    background-color: #00FFFF;
+
   }
 }
-
+}
 }
