@@ -1,0 +1,42 @@
+.--input_messages {
+  height: 90px;
+  width: 785px;
+  float: right;
+
+  .__send_box {
+  height: 50px;
+  background-color: #FFFAF0;
+  margin: 20px 0;
+  .h4 {
+    display: inline;
+    text-align: center;
+  }
+  .message_area {
+    height: 45px;
+    width: 600px;
+    float: left;
+  }
+  .i.fa.fa-picture-o {
+    display: inline;
+    padding-left: 600px;
+    text-height: middle;
+  }
+}
+.__send_button {
+  height: 50px;
+  width: 80px;
+  float: right;
+  padding-right: 40px;
+  background-color: white;
+
+    .button_send {
+  height: 50px;
+  width: 80px;
+background-color: #00FFFF;
+border: 0;
+  background: none;
+  background-color: #00FFFF;
+  }
+}
+
+}

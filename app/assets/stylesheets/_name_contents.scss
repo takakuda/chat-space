@@ -1,18 +1,18 @@
-.name_contents {
+.--name_contents {
   background-color: #253141;
   height: 128px;
-  .h2 {
+  .__user-name {
     color: #FFFAF0;
     size: 16px;
     font-weight: bold;
     line-height: 120px;
     display: inline;
   }
-  .i.fa.fa-pencil-square-o {
+  .__i.fa.fa-pencil-square-o {
     color: #F8F8FF;
     text-align: right;
   }
-  .i.fa.fa-cog {
+  .__i.fa.fa-cog {
     color: #F8F8FF;
     display: inline;
   }

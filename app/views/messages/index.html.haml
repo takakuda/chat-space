@@ -1,40 +1,45 @@
 %header
-  .p チャットグループが作成されました。
+  .header__top-message チャットグループが作成されました。
 
 .left_contents
-  .name_contents
-    .h2 takakuda
-    .i.fa.fa-pencil-square-o.fa-2x{"aria-hidden" => "true"}
-    .i.fa.fa-cog.fa-2x{"aria-hidden" => "true"}
+  .--name_contents
+    .__user-name takakuda
+    .__i.fa.fa-pencil-square-o.fa-2x{"aria-hidden" => "true"}
+    .__i.fa.fa-cog.fa-2x{"aria-hidden" => "true"}
 
 
-  .messages_contents
-    .p2 aaaaaaaaaaaa
-    .p3 まだメッセージはありません。
+  .--messages_contents
+    .__coment1 aaaaaaaaaaaa
+    .__text1 まだメッセージはありません。
 
-    .p4 sampleグループ
-    .p5 まだメッセージはありません
+    .__coment2 sampleグループ
+    .__text2 まだメッセージはありません
 
 .right_contents
-  .group_contents
-    .edit_button
+  .--group_contents
+    .--edit_button
       %input.button_edit{ type: :submit, value: "EDIT"}
-    .h3 sampleグループ
-    .p6 member
-  .chat_contents
-    .h4 takakuda kei
-    .p 2017/05/01 18:03:47
-    .p1 なるほど
-    .h4 kei takakuda
-    .p 2017/05/03 05:04:54
-    .p1 もう18時
-    .h4 takakuda tomizou
-    .p 2017/05/01 19:30:57
-    .p1 頑張れ
+    .__group-name sampleグループ
+    .__member member
+  .--chat_contents
+    .__user takakuda kei
+    .__time 2017/05/01 18:03:47
+    .__messages なるほど
+    .__user kei takakuda
+    .__time 2017/05/03 05:04:54
+    .__messages もう18時
+    .__user takakuda tomizou
+    .__time 2017/05/01 19:30:57
+    .__messages 頑張れ
 
-.bottom_contents
-  .send_box
+.--input_messages
+  .__send_box
+
     %input.message_area{ type: :text }
 
-    .send_button
+    %i.fa.fa-file-image-o{"aria-hidden" => "true"}
+
+
+
+    .__send_button
       %input.button_send{ type: :submit, value: "send" }

@@ -1,18 +1,19 @@
-.chat_contents {
+.--chat_contents {
   padding-top: 40px;
-  .h4 {
+  background-color: white;
+  .__user {
     line-height: 46px;
     size: 10px;
     display: inline;
     padding-left: 40px;
   }
-  .p {
+  .__time {
    display: inline;
    color: #999999;
    size: 12px;
    padding-left: 40px;
   }
-  .p1 {
+  .__messages {
     line-height: 10px;
     display: block;
     padding-bottom: 40px;
