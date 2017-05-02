@@ -1,48 +1,46 @@
 %header
-  .header__top-message チャットグループが作成されました。
+  .header_top_message チャットグループが作成されました。
 
 .left_contents
-  .--name_contents
-    .__user-name takakuda
-    .__i.fa.fa-pencil-square-o.fa-lg{"aria-hidden" => "true"}
-    .__i.fa.fa-cog.fa-lg{"aria-hidden" => "true"}
+  .name_contents
+    .user-name takakuda
+    .i.fa.fa-pencil-square-o.fa-lg{"aria-hidden": "true"}
+    .i.fa.fa-cog.fa-lg{"aria-hidden": "true"}
+  .messages_contents
+    .coment1 aaaaaaaaaaaa
+    .text1 まだメッセージはありません。
 
-
-  .--messages_contents
-    .__coment1 aaaaaaaaaaaa
-    .__text1 まだメッセージはありません。
-
-    .__coment2 sampleグループ
-    .__text2 まだメッセージはありません
+    .coment2 sampleグループ
+    .text2 まだメッセージはありません
 
 .right_contents
-  .--group_contents
-    .--edit_button
-      %input.button_edit{:style => "background:white;color:#00FFFF;", :type => "submit", :value => "Edit"}/
+  .group_contents
+    .edit_button
+      %input.button_edit{style: "background:white;color:#00FFFF;", type:  "submit", value: "Edit"}/
 
-    .__group-name sampleグループ
-    .__member member
-  .--chat_contents
-    .__user takakuda kei
-    .__time 2017/05/01 18:03:47
-    .__messages なるほど
-    .__user kei takakuda
-    .__time 2017/05/03 05:04:54
-    .__messages もう18時
-    .__user takakuda tomizou
-    .__time 2017/05/01 19:30:57
-    .__messages 頑張れ
+    .group-name sampleグループ
+    .member member
+  .chat_contents
+    .user takakuda kei
+    .time 2017/05/01 18:03:47
+    .messages なるほど
+    .user kei takakuda
+    .time 2017/05/03 05:04:54
+    .messages もう18時
+    .user takakuda tomizou
+    .time 2017/05/01 19:30:57
+    .messages 頑張れ
 
-.--input_messages
-  .__send_box
+.input_messages
+  .send_box
 
     %input.message_area{ type: :text }
 
     .box
-      .i.fa.fa-file-image-o.fa-lg{"aria-hidden" => "true"}
+      .i.fa.fa-file-image-o.fa-lg{"aria-hidden": "true"}
 
 
 
-    .__send_button
+    .send_button
       .button_send
-        %input.button_send{:style => "background:#1E90FF;color:white;", :type => "submit", :value => "Send"}/
+        %input.button_send{style: "background:#1E90FF;color:white;", type: "submit", value: "Send"}/

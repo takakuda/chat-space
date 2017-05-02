@@ -1,7 +1,7 @@
-.--chat_contents {
+.chat_contents {
   padding-top: 40px;
   background-color: white;
-  .__user {
+  .user {
     line-height: 46px;
     size: 16px;
     display: inline;
@@ -9,13 +9,13 @@
     font-style: bold;
     color: #434A54;
   }
-  .__time {
+  .time {
    display: inline;
    color: #999999;
    size: 12px;
    padding-left: 40px;
   }
-  .__messages {
+  .messages {
     line-height: 10px;
     display: block;
     padding-bottom: 40px;

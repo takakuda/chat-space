@@ -1,8 +1,8 @@
-.--name_contents {
+.name_contents {
   background-color: #253141;
   height: 128px;
 
-  .__user-name {
+  .user-name {
     color: #FFFAF0;
     size: 16px;
     font-weight: bold;
@@ -10,7 +10,7 @@
     text-align: center;
   }
 
-  .__i.fa.fa-pencil-square-o {
+  .i.fa.fa-pencil-square-o {
     color: #F8F8FF;
     padding-left: 210px;
     display: inline;
@@ -18,7 +18,7 @@
     top: 80px;
   }
 
-  .__i.fa.fa-cog {
+  .i.fa.fa-cog {
     color: #F8F8FF;
     padding-left: 200px;
     display: inline;
