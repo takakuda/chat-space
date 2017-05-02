@@ -2,9 +2,10 @@
   height: 90px;
   width: 785px;
   float: right;
+  background-color: #D3D3D3;
 
   .__send_box {
-  height: 50px;
+    height: 20px;
   background-color: white;
   margin: 20px 0;
   .h4 {
@@ -13,7 +14,7 @@
   }
   .message_area {
     height: 45px;
-    width: 600px;
+    width: 661px;
     float: left;
   }
 
@@ -25,22 +26,22 @@
 
   .i.fa.fa-file-image-o {
     position: absolute;
-    right: 140px;
+    right: 150px;
     top: 780px;
   }
 .__send_button {
-  height: 80px;
+  height: 50px;
   width: 80px;
   float: right;
   padding-right: 40px;
   background-color: white;
-  border-color: #00FFFF;
 
    .button_send {
     height: 50px;
     width: 80px;
-    border-color: #00FFFF;
-    background-color: #00FFFF;
+    background-color: #1E90FF;
+    border: 0;
+    background: none;
 
   }
 }
