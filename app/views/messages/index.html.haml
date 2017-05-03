@@ -1,0 +1,33 @@
+%header
+  .header_top_message チャットグループが作成されました。
+
+.chat-space
+  .chat-space__name
+    .chat-space__name-contents takakuda
+    .i.fa.fa-pencil-square-o.fa-lg{"aria-hidden": "true"}
+    .i.fa.fa-cog.fa-lg{"aria-hidden": "true"}
+  .chat-space__message
+    .chat-space__message-comment1 aaaaaaaaaaaa
+    .chat-space__message-text1 まだメッセージはありません。
+    .chat-space__message-comment2 sampleグループ
+    .chat-space__message-text2 まだメッセージはありません
+
+.chat-main
+  .chat-main__group
+    .chat-main__group-name sampleグループ
+    .chat-main__group-member member
+    .chat-main__group-edit-button
+      .chat-main__group-button-edit
+      %input.button_edit{style: "background:white;color:#00BFFF;", type:  "submit", value: "Edit"}
+  .chat-main__contents
+    .chat-main__contents-user takakuda kei
+    .chat-main__contents-time 2017/05/01 18:03:47
+    .chat-main__contents-messages なるほど
+
+  .chat-main__input
+    .chat-main__input__send
+      %input.message_area{ type: :text }
+      .i.fa.fa-file-image-o.fa-lg{"aria-hidden": "true"}
+    .chat-main__input__space
+      .chat-main__input__space-button-send
+        %input.button-send{style: "background:#1E90FF;color:white;", type: "submit", value: "Send"}/
