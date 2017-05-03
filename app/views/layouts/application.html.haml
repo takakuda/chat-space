@@ -9,7 +9,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
   %body
     %header
-        %nav
+      %nav
         - if user_signed_in?
             %strong= link_to current_user.username, pages_show_path
             = link_to 'プロフィール変更', edit_user_registration_path
