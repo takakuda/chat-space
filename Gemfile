@@ -26,4 +26,5 @@ gem 'haml-rails'
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'font-awesome-rails'
-
+gem 'devise'
+gem 'omniauth-twitter'
