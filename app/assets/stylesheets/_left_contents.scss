@@ -1,0 +1,57 @@
+.chat-space {
+  height: 800px;
+  width: 300px;
+  background-color: #2f3e51;
+  float: left;
+
+  &__name {
+  background-color: 253141;
+  height: 128px;
+
+    &-contents {
+    color: #FFFFFF;
+    size: 16px;
+    font-weight: bold;
+    line-height: 120px;
+    text-align: center;
+    }
+    .i.fa.fa-pencil-square-o {
+    color: white;
+    padding-left: 210px;
+    display: inline;
+    position: absolute;
+    top: 80px;
+    }
+    .i.fa.fa-cog {
+    color: white;
+    padding-left: 200px;
+    display: inline;
+    position: absolute;
+    top: 80px;
+    left: 40px;
+    }
+  }
+  &__message {
+  padding-top: 40px;
+
+    &-comment1 {
+    color: white;
+    font-style: bold;
+    padding-left: 20px;
+      }
+    &-text1 {
+      color: white;
+    padding-left: 20px;
+      }
+    &-comment2 {
+      color: white;
+    font-style: bold;
+    padding-top: 50px;
+    padding-left: 20px;
+      }
+    &-text2 {
+      color: white;
+    padding-left: 20px;
+      }
+  }
+}
