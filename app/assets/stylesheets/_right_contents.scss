@@ -1,7 +1,98 @@
-.right_contents {
+.chat-main {
   background-color: white;
   float: left;
   height: 710px;
   width: 785px;
+  &__group {
+    height: 128px;
+    background-color: white;
+    &-name {
+      font-size: 20px;
+     padding-top: 50px;
+     padding-left: 40px;
+     color: #333333;
+    }
+    &-member {
+      color: #999999;
+    size: 12px;
+    line-height: 15px;
+    padding-bottom: 46px;
+    padding-left: 40px;
+    }
+    &-edit-button {
+    padding-right: 40px;
+    margin-top: 50px;
+    height: 40px;
+    width: 60px;
+    position: absolute;
+    right: 40px;
+    top: 28px;
+    }
+    .button_edit {
+    height: 40px;
+    width: 60px;
+    background: none;
+    border-color: #00BFFF;
+    border: 1
+    }
+  }
+  &__contents {
+    padding-top: 40px;
+    background-color: white;
+    height: 550px;
+    &-user {
+    line-height: 46px;
+    size: 16px;
+    display: inline;
+    padding-left: 40px;
+    font-style: bold;
+    color: #434A54;
+    }
+    &-time {
+    display: inline;
+    color: #999999;
+    size: 12px;
+    padding-left: 40px;
+    }
+    &-messages {
+    line-height: 10px;
+    display: block;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    size: 14px;
+    color: #434A54;
+  }
+  }
+  &__input {
+    height: 90px;
+  width: 785px;
+  float: right;
+      .message_area {
+    height: 45px;
+    width: 471px;
+    float: left;
+    padding-left: 190px;
+  }
+      .i.fa.fa-file-image-o {
+    position: absolute;
+    right: 150px;
+    top: 765px;
+  }
+    &__space {
+      height: 50px;
+  width: 80px;
+  float: right;
+  padding-right: 40px;
+  background-color: white;
+      .button-send {
+        height: 50px;
+    width: 80px;
+    background-color: #1E90FF;
+    border: 0;
+    background: none;
+      }
+    }
+  }
+
 }
 
