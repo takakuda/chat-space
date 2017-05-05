@@ -3,7 +3,7 @@
     .account-page__inner--left.account-page__header
       %h2 Edit Account
       %h5 アカウントの編集
-      = link_to "ログアウト", destroy_session_path, method: :delete, class: 'btn'
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
       = link_to "トップページに戻る", :back, class: 'btn'
     .account-page__inner--right.user-form
       = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
