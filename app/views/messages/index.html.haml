@@ -4,8 +4,9 @@
 .chat-space
   .chat-space__name
     .chat-space__name-contents takakuda
-    .i.fa.fa-pencil-square-o.fa-lg{"aria-hidden": "true"}
-    .i.fa.fa-cog.fa-lg{"aria-hidden": "true"}
+    = link_to edit_user_registration_path do
+      .i.fa.fa-pencil-square-o.fa-lg{"aria-hidden": "true"}
+      .i.fa.fa-cog.fa-lg{"aria-hidden": "true"}
   .chat-space__message
     .chat-space__message-comment1 aaaaaaaaaaaa
     .chat-space__message-text1 まだメッセージはありません。

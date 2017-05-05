@@ -2,12 +2,8 @@
 @import "font-awesome";
 @import "_header.scss";
 @import "_left_contents.scss";
-@import "_name_contents.scss";
-@import "_messages_contents.scss";
 @import "_right_contents.scss";
-@import "_group_contents.scss";
-@import "_chat_contents.scss";
-@import "_input_messages.scss";
+@import "./user";
 
 $color-white: #F8F8FF;
 $color-grey: #999999;
