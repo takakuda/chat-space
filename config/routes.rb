@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :messages
   resources :users
   devise_for :user
+  root 'home#index'
 end
