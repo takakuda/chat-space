@@ -1,0 +1,10 @@
+.flash {
+  color: white;
+  text-align: center;
+  &__alert{
+    background-color: red;
+  }
+  &__notice {
+    background-color: #38AEF0;
+  }
+}

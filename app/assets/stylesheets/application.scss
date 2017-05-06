@@ -1,11 +1,8 @@
 @import "./reset";
+@import "_colors.scss";
 @import "font-awesome";
 @import "_header.scss";
 @import "_left_contents.scss";
 @import "_right_contents.scss";
 @import "./user";
-
-$color-white: #F8F8FF;
-$color-grey: #999999;
-$color-block: #333333;
-
+@import "_flash.scss";
