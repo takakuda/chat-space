@@ -5,13 +5,9 @@
     %title ChatSpace
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+    = csrf_meta_tags 
+      %link{:href => "css/font-awesome.min.css", :rel => "stylesheet"}
+
   %body
-    -if flash[:notice]
-      %p.alert.alert-notice
-        = flash[:notice]
-    - if flash[:alert]
-      %p.alert.alert-error
-        = flash[:alert]
-  = yield
+    =render partial: "layouts/flash
+      = yield
