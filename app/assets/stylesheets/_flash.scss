@@ -1,10 +1,17 @@
-.flash {
-   color: white;
-   text-align: center;
-   &__alert{
-     background-color: red;
-   }
-   &__notice {
-     background-color: blue;
-   }
- }
+.alert-notice {
+  background-color: #38AEF0;
+  height: 30px;
+  width: 100vw;
+  $side_color: #FFFFFF;
+  color: $side_color;
+  text-align: center;
+}
+
+.alert-error {
+  background-color: #38AEF0;
+  height: 30px;
+  width: 100vw;
+  $side_color: #FFFFFF;
+  color: $side_color;
+  text-align: center;
+}
