@@ -1,17 +1,10 @@
-.alert-notice {
-  background-color: #38AEF0;
-  height: 30px;
-  width: 100vw;
-  $side_color: #FFFFFF;
-  color: $side_color;
+.flash {
+  color: #ffffff;
   text-align: center;
-}
-
-.alert-error {
-  background-color: #38AEF0;
-  height: 30px;
-  width: 100vw;
-  $side_color: #FFFFFF;
-  color: $side_color;
-  text-align: center;
+  &__alert{
+    background-color: tomato;
+  }
+  &__notice {
+    background-color: #38AEF0;
+  }
 }

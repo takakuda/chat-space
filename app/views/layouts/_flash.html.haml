@@ -1,7 +1,4 @@
-%p.alert
-- if flash[:notice]
-  %p.alert.alert-notice
-    = flash[:notice]
-- if flash[:alert]
-  %p.alert.alert-error
-    = flash[:alert]
+- flash.each do |key, value|
+  = content_tag(:div, value, class: "flash flash__#{key}")
+
+
