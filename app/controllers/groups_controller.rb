@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:name, {:user_ids => []})
+    params.require(:post).permit(:name, {:user_ids :[]})
   end
 
   private
