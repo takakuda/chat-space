@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :group_users
+  has_many :groups, through: :group_users
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   def update_without_current_password(params, *options)
