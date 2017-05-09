@@ -8,14 +8,14 @@ class GroupsController < ApplicationController
     @group.save
     if @group.save
         redirect_to :root, notice: "グループを作成しました"
-      else
+    else
         flash.now[:alert] = "グループ名を入力してください"
         render 'new'
-      end
-
-      def edit
-      end
     end
+  end
+
+  def edit
+  end
 
   private
 
