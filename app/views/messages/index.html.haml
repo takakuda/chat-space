@@ -16,8 +16,9 @@
     .chat-main__group-name sampleグループ
     .chat-main__group-member member
     .chat-main__group-edit-button
-      .chat-main__group-button-edit
-      %input.button_edit{style: "background:white;color:#00BFFF;", type:  "submit", value: "Edit"}
+      = link_to edit_group_path(current_user) do
+        .chat-main__group-button-edit
+        %input.button_edit{style: "background:white;color:#00BFFF;", type:  "submit", value: "Edit"}
   .chat-main__contents
     .chat-main__contents-user takakuda kei
     .chat-main__contents-time 2017/05/01 18:03:47
