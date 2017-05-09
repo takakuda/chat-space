@@ -15,6 +15,19 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @group = Group.find(params[:id])
+  end
+
+  def update
+    @group = Group.find(params[:id])
+    if @group.user_ids == current_user.id
+       @group.update(group_params)
+       redirect_to :root, notice: "グループを更新しました"
+    else
+      flash.now[:alert] = "グループ更新に失敗しました"
+      render 'new'
+    end
+
   end
 
   private

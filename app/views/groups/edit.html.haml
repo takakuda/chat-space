@@ -1,14 +1,11 @@
 .chat-group-form
   %h1 チャットグループ編集
-  %form#edit_chat_group_22.edit_chat_group{"accept-charset" => "UTF-8", :action => "/chat_groups/22", :method => "post"}
-    %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-    %input{:name => "_method", :type => "hidden", :value => "patch"}/
-    %input{:name => "authenticity_token", :type => "hidden", :value => "U5ABp0/UobRQTSwsR0V40bX1w3t0rZ0CTqrVyLecD+L6sdhBRO/gVcKy7w/Rgxnc7Hf0Ts39996dal3to5fTag=="}/
+  = form_for @group do |f|
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        %label.chat-group-form__label{:for => "chat_group_name"} グループ名
+        = f.label :name , 'グループ名'
       .chat-group-form__field--right
-        %input#chat_group_name.chat-group-form__input{:name => "chat_group[name]", :placeholder => "グループ名を入力してください", :type => "text", :value => "ほげー"}/
+        = f.text_field :name, class: 'chat_group_name', placeholder: 'グループ名を入力してください', type: 'ほげー'
     .chat-group-form__field.clearfix
       / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
       /
@@ -23,9 +20,11 @@
         </div>
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
+        = f.label :users, 'チャットメンバー'
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
+        = collection_check_boxes( :@group, :user_ids, User.all, :id, :name)
         / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
-        %input.chat-group-form__action-btn{"data-disable-with" => "Save", :name => "commit", :type => "submit", :value => "Save"}/
+        / %input.chat-group-form__action-btn{"data-disable-with" => "Save", :name => "commit", :type => "submit", :value => "Save"}/
+        = f.submit class: 'data-disable-with', name: 'commit', type: 'submit', value: 'Save'
