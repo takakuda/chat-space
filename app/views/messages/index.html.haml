@@ -5,16 +5,17 @@
       .i.fa.fa-pencil-square-o.fa-lg{"aria-hidden": "true"}
     = link_to edit_user_registration_path do
       .i.fa.fa-cog.fa-lg{"aria-hidden": "true"}
-  .chat-space__message
-    .chat-space__message-comment1 aaaaaaaaaaaa
-    .chat-space__message-text1 まだメッセージはありません。
-    .chat-space__message-comment2 sampleグループ
-    .chat-space__message-text2 まだメッセージはありません
+
+  .group-list
+    = render partial: 'messages/group-list', collection: @groups, as: :group
 
 .chat-main
   .chat-main__group
-    .chat-main__group-name sampleグループ
-    .chat-main__group-member member
+    %p.group__name
+      = @group.name
+    %p.group__member
+      Members:
+      = @users.pluck :name
     .chat-main__group-edit-button
       = link_to edit_group_path(current_user) do
         .chat-main__group-button-edit

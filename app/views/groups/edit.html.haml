@@ -25,6 +25,4 @@
       .chat-group-form__field--left
       .chat-group-form__field--right
         = collection_check_boxes( :@group, :user_ids, User.all, :id, :name)
-        / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
-        / %input.chat-group-form__action-btn{"data-disable-with" => "Save", :name => "commit", :type => "submit", :value => "Save"}/
         = f.submit class: 'data-disable-with', name: 'commit', type: 'submit', value: 'Save'

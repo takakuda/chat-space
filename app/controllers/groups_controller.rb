@@ -28,6 +28,10 @@ class GroupsController < ApplicationController
       render 'new'
     end
 
+    def index
+      @groups = current_user.groups.limit(5)
+    end
+
   end
 
   private
