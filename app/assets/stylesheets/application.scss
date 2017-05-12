@@ -4,8 +4,9 @@
 @import "_header.scss";
 @import "_left_contents.scss";
 @import "_right_contents.scss";
-@import "./user";
+/*@import "./user";*/
 @import "_flash.scss";
+@import "_group.scss";
 
 .message {
   padding: 20px 20px 40px 20px;
