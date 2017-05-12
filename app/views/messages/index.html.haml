@@ -20,11 +20,6 @@
       = form_for [@group, @message] do |f|
         %p
           = f.text_field :body, class: "submit__content", placeholder: 'メッセージを入力してください'
-        %i.fa.fa-file-image-o.fa-lg{"aria-hidden": "true"}
+          %i.fa.fa-file-image-o.fa-lg{"aria-hidden": "true"}
         %p
           = f.submit "Send", class: "submit__btn", name: "Commit"
-    /   %input.message_area{ type: :text }
-    /   .i.fa.fa-file-image-o.fa-lg{"aria-hidden": "true"}
-    / .chat-main__input__space
-    /   .chat-main__input__space-button-send
-    /     %input.button-send{style: "background:#1E90FF;color:white;", type: "submit", value: "Send"}/
