@@ -6,8 +6,11 @@ before_action :reload_date
 
   def create
     @message = @messages.new(message_params)
-    @message.save
-    redirect_to action: :index
+    if @message.save
+    redirect_to :root, notice: "メッセージを作成しました"
+    else
+    lash.now[:alert] = "メッセージを入力してください"
+    end
   end
 
   private
