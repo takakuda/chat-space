@@ -1,20 +1,21 @@
 class MessagesController < ApplicationController
-before_action :reload_date
+before_action :params_date
   def index
   end
 
   def create
     @message = @messages.new(message_params)
     if @message.save
-    redirect_to :root, notice: "メッセージを作成しました"
+      redirect_to :root, notice: "メッセージを作成しました"
     else
-    redirect_to :root, alert: "メッセージを入力してください"
+      flash.now[:alert] = "メッセージを入力してください"
+      render 'index'
     end
   end
 
   private
 
-  def reload_date
+  def params_date
     @groups = current_user.groups.order(id: :DESC).limit(5)
     @group = Group.find(params[:group_id])
     @users = @group.users
