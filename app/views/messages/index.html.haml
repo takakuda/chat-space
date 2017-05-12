@@ -1,13 +1,4 @@
-.chat-space
-  .chat-space__name
-    .chat-space__name-contents takakuda
-    = link_to new_group_path do
-      .i.fa.fa-pencil-square-o.fa-lg{"aria-hidden": "true"}
-    = link_to edit_user_registration_path do
-      .i.fa.fa-cog.fa-lg{"aria-hidden": "true"}
-
-  .group-list
-    = render partial: 'messages/group-list', collection: @groups, as: :group
+= render 'chat_main-name'
 
 .chat-main
   .chat-main__group
@@ -16,10 +7,9 @@
     %p.group__member
       Members:
       = @users.pluck :name
-    .chat-main__group-edit-button
-      = link_to edit_group_path(current_user) do
-        .chat-main__group-button-edit
-        %input.button_edit{style: "background:white;color:#00BFFF;", type:  "submit", value: "Edit"}
+    = link_to edit_group_path(@group) do
+      %p.group__btn
+        Edit
   .chat-main__contents
     .chat-main__contents-user takakuda kei
     .chat-main__contents-time 2017/05/01 18:03:47

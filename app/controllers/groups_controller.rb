@@ -1,16 +1,23 @@
 class GroupsController < ApplicationController
+  before_action :find_group_params, only: [:edit, :update]
+
+  def index
+    @groups = current_user.groups.limit(5)
+  end
+
   def new
-    @group = Group.new(params[:id])
+    @group = Group.new
+    @group.users << current_user
   end
 
   def create
     @group = Group.new(post_params)
     @group.save
     if @group.save
-        redirect_to :root, notice: "グループを作成しました"
+      redirect_to :root, notice: "グループを作成しました"
     else
-        flash.now[:alert] = "グループ名を入力してください"
-        render 'new'
+      flash.now[:alert] = "グループ名を入力してください"
+      render 'new'
     end
   end
 
@@ -28,15 +35,15 @@ class GroupsController < ApplicationController
       render 'new'
     end
 
-    def index
-      @groups = current_user.groups.limit(5)
-    end
-
   end
 
   private
 
   def post_params
-      params.require(:group).permit(:name, {user_ids: :[]})
+      params.require(:group).permit(:name, user_ids: [])
+  end
+
+  def find_group_params
+      @group = Group.find(params[:id])
   end
 end

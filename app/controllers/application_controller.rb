@@ -7,9 +7,4 @@ class ApplicationController < ActionController::Base
        devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 
-  def index
-    @groups = current_user.groups.limit(5)
-    @group = Group.find(params[:id])
-    @users = @group.users
-  end
 end

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :user
   root 'groups#index'
-  resources :groups, expect: [:destroy, :show, :index] do
+  devise_for :user
+  resources :users, only: [:edit, :update]
+  resources :groups, expect: [:destroy, :show] do
     resources :messages, only: [:index]
   end
 end

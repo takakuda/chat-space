@@ -1,11 +1,1 @@
-.chat-space__name
-  .chat-space__name-contents
-    = current_user.name
-    = link_to new_group_path do
-      .i.fa.fa-pencil-square-o.fa-lg{"aria-hidden": "true"}
-    = link_to edit_user_registration_path do
-      .i.fa.fa-cog.fa-lg{"aria-hidden": "true"}
-
-    .group-wrapper
-      = render partial: 'messages/group-list', collection: @groups, as: :group
-
+= render 'messages/chat_main-name'
