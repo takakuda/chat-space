@@ -6,7 +6,7 @@
       = @group.name
     %p.group__member
       Members:
-      = @users.pluck :name
+      = @group.users.pluck :name
     = link_to edit_group_path(@group) do
       %p.group__btn
         Edit
@@ -17,8 +17,9 @@
 
   .chat-main__input
     .chat-main__input__send
-      %input.message_area{ type: :text }
-      .i.fa.fa-file-image-o.fa-lg{"aria-hidden": "true"}
-    .chat-main__input__space
-      .chat-main__input__space-button-send
-        %input.button-send{style: "background:#1E90FF;color:white;", type: "submit", value: "Send"}/
+      = form_for [@group, @message] do |f|
+        %p
+          = f.text_field :body, class: "submit__content", placeholder: 'メッセージを入力してください'
+          %i.fa.fa-file-image-o.fa-lg{"aria-hidden": "true"}
+        %p
+          = f.submit "Send", class: "submit__btn", name: "Commit"

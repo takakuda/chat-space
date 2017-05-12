@@ -66,32 +66,31 @@
   }
   &__input {
     height: 90px;
-  width: 785px;
-  float: right;
-      .message_area {
-    height: 45px;
-    width: 471px;
+    width: 785px;
+    .submit__content {
+    height: 50px;
+    width: 511px;
     float: left;
     padding-left: 190px;
+    margin-top: 25px;
   }
-      .i.fa.fa-file-image-o {
-    position: absolute;
-    right: 150px;
-    top: 765px;
+    .fa-lg {
+      content: "\f1c5";
+    position: relative;
+    right: 30px;
+    top: 35px;
   }
-    &__space {
-      height: 50px;
+      .submit__btn {
+      height: 55px;
   width: 80px;
   float: right;
   padding-right: 40px;
-  background-color: white;
-      .button-send {
-        height: 50px;
-    width: 80px;
-    background-color: #1E90FF;
-    border: 0;
-    background: none;
-      }
+  padding-left: 15px;
+  margin-bottom: 20px;
+  background-color: #1E90FF;
+  color: white;
+  border: solid;
+  text-align: center;
     }
   }
 
