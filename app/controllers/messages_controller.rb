@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
 before_action :reload_date
   def index
-    
   end
 
   def create
@@ -9,7 +8,7 @@ before_action :reload_date
     if @message.save
     redirect_to :root, notice: "メッセージを作成しました"
     else
-    lash.now[:alert] = "メッセージを入力してください"
+    redirect_to :root, alert: "メッセージを入力してください"
     end
   end
 
