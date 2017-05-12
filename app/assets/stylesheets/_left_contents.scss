@@ -31,27 +31,23 @@
     left: 40px;
     }
   }
-  &__message {
+  ._message {
   padding-top: 40px;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+  opacity: 0.5;
+  }
 
-    &-comment1 {
+    p.-comment {
     color: white;
     font-style: bold;
     padding-left: 20px;
       }
-    &-text1 {
+    p.-text {
       color: white;
     padding-left: 20px;
-      }
-    &-comment2 {
-      color: white;
-    font-style: bold;
-    padding-top: 50px;
-    padding-left: 20px;
-      }
-    &-text2 {
-      color: white;
-    padding-left: 20px;
-      }
   }
+}
 }

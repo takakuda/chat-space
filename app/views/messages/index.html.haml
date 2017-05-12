@@ -1,24 +1,15 @@
-.chat-space
-  .chat-space__name
-    .chat-space__name-contents takakuda
-    = link_to new_group_path do
-      .i.fa.fa-pencil-square-o.fa-lg{"aria-hidden": "true"}
-    = link_to edit_user_registration_path do
-      .i.fa.fa-cog.fa-lg{"aria-hidden": "true"}
-  .chat-space__message
-    .chat-space__message-comment1 aaaaaaaaaaaa
-    .chat-space__message-text1 まだメッセージはありません。
-    .chat-space__message-comment2 sampleグループ
-    .chat-space__message-text2 まだメッセージはありません
+= render 'chat_main-name'
 
 .chat-main
   .chat-main__group
-    .chat-main__group-name sampleグループ
-    .chat-main__group-member member
-    .chat-main__group-edit-button
-      = link_to edit_group_path(current_user) do
-        .chat-main__group-button-edit
-        %input.button_edit{style: "background:white;color:#00BFFF;", type:  "submit", value: "Edit"}
+    %p.group__name
+      = @group.name
+    %p.group__member
+      Members:
+      = @users.pluck :name
+    = link_to edit_group_path(@group) do
+      %p.group__btn
+        Edit
   .chat-main__contents
     .chat-main__contents-user takakuda kei
     .chat-main__contents-time 2017/05/01 18:03:47

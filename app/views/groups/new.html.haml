@@ -9,7 +9,7 @@
       .chat-group-form__field--left
         = f.label :users, 'チャットメンバー'
       .chat-group-form__field--right
-        = collection_check_boxes( :@group, :user_ids, User.all, :id, :name)
+        = f.collection_check_boxes(:user_ids, User.all, :id, :name)
         .chat-group-form__field.clearfix
           .chat-group-form__field--left
           .chat-group-form__field--right

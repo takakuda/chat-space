@@ -6,34 +6,35 @@
   &__group {
     height: 128px;
     background-color: white;
-    &-name {
+    p.group__name {
       font-size: 20px;
      padding-top: 50px;
      padding-left: 40px;
      color: black;
     }
-    &-member {
+    p.group__member {
       color: grey;
     size: 12px;
     line-height: 15px;
     padding-bottom: 46px;
     padding-left: 40px;
     }
-    &-edit-button {
-    padding-right: 40px;
+    p.group__btn {
+    display: inline-block;
+    padding-right: 15px;
     margin-top: 50px;
     height: 40px;
-    width: 60px;
+    width: 40px;
     position: absolute;
-    right: 40px;
+    right: 60px;
     top: 28px;
-    }
-    .button_edit {
-    height: 40px;
-    width: 60px;
     background: none;
     border-color: #00BFFF;
-    border: 1
+    border: solid;
+    color: #00FFFF;
+    text-align: center;
+    line-height: 40px;
+    text-indent: 0.1in;
     }
   }
   &__contents {
