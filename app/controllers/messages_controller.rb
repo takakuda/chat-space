@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
 before_action :params_date
   def index
+    @groups = current_user.groups.order(id: :DESC).limit(5)
   end
 
   def create
@@ -16,7 +17,6 @@ before_action :params_date
   private
 
   def params_date
-    @groups = current_user.groups.order(id: :DESC).limit(5)
     @group = Group.find(params[:group_id])
     @users = @group.users
     @message = Message.new
