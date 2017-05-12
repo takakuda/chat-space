@@ -69,23 +69,24 @@
     width: 785px;
     .submit__content {
     height: 50px;
-    width: 491px;
+    width: 511px;
     float: left;
     padding-left: 190px;
-    margin-top: 20px;
+    margin-top: 25px;
   }
-    .i.fa.fa-file-image-o.fa-lg {
-        float: right;
-    position: absolute;
-    right: 200px;
-    top: 780px;
+    .fa-lg {
+      content: "\f1c5";
+    position: relative;
+    right: 30px;
+    top: 35px;
   }
       .submit__btn {
-      height: 50px;
+      height: 55px;
   width: 80px;
   float: right;
   padding-right: 40px;
   padding-left: 15px;
+  margin-bottom: 20px;
   background-color: #1E90FF;
   color: white;
   border: solid;
