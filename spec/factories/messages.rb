@@ -1,7 +1,7 @@
 FactoryGirl.define do
 
   factory :message do
-    body             "こんにちは"
-    image            ""
+    body {Faker::Name.name }
+    image ""
   end
 end

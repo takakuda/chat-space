@@ -70,6 +70,8 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
+    faker (1.7.3)
+      i18n (~> 0.5)
     font-awesome-rails (4.7.0.1)
       railties (>= 3.2, < 5.1)
     globalid (0.4.0)
@@ -229,6 +231,7 @@ DEPENDENCIES
   devise
   erb2haml
   factory_girl_rails (~> 4.4.1)
+  faker
   font-awesome-rails
   haml-rails
   jbuilder (~> 2.0)
