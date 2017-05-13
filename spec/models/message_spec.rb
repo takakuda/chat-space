@@ -2,10 +2,10 @@ require 'spec_helper'
 require 'rails_helper'
 describe Message do
   describe '#create' do
+    let(:message){build(:message, body: "") }
     it "空欄ではメッセージが送信できないこと" do
-      message = build(:message, body: "")
       message.valid?
-      expect(message.errors.messages[:body]).to include("本文を入力してください。")
+      expect(message.errors[:body]).to include("本文を入力してください。")
     end
 
     it "メッセージが入力されていれば送信できること" do
