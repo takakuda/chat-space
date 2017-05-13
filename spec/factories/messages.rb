@@ -2,6 +2,6 @@ FactoryGirl.define do
 
   factory :message do
     body             "こんにちは"
-    image ""
+    image            ""
   end
 end
