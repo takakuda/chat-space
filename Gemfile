@@ -19,6 +19,7 @@ group :development, :test do
   gem 'spring'
   gem 'erb2haml'
   gem 'pry-rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
