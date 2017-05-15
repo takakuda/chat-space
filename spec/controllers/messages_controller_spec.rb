@@ -41,7 +41,7 @@ describe MessagesController, type: :controller do
       before do
       login_user user
     end
-      it '保存できる場合' do
+      it '保存に成功した場合' do
         expect{
           post :create, params: params}.to change( Message, :count ).by(1)
       end
