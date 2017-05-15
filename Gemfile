@@ -19,7 +19,6 @@ group :development, :test do
   gem 'spring'
   gem 'erb2haml'
   gem 'pry-rails'
-  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -35,4 +34,5 @@ gem 'omniauth-twitter'
 
 group :test do
   gem 'faker'
+  gem 'rails-controller-testing'
 end
