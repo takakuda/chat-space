@@ -19,6 +19,7 @@ group :development, :test do
   gem 'spring'
   gem 'erb2haml'
   gem 'pry-rails'
+  gem 'faker'
 end
 
 group :development do
@@ -31,8 +32,8 @@ gem 'omniauth-twitter'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'omniauth-twitter'
+gem 'rails-controller-testing'
 
 group :test do
-  gem 'faker'
-  gem 'rails-controller-testing'
+  
 end
