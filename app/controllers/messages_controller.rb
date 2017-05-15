@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-before_action :set_group, :set_message
+# before_action :set_group, :set_message
   def index
     @groups = current_user.groups.order(id: :DESC).limit(5)
   end
