@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = @messages.new(message_params)
+
     if @message.save
       respond_to do |format|
         format.html {
@@ -15,11 +16,12 @@ class MessagesController < ApplicationController
         }
         format.json { render json: @message }
       end
-      # redirect_to :root, notice: "メッセージを作成しました"
+
     else
       flash.now[:alert] = "メッセージを入力してください"
       render 'index'
     end
+
   end
 
   private
