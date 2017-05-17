@@ -14,11 +14,10 @@ class MessagesController < ApplicationController
         format.html {
           redirect_to :root, notice: "メッセージを作成しました"
         }
-        format.json { render 'json.jbuilder' }
+        format.json { render 'format.json' }
       end
 
     else
-      # flash.now[:alert] = "メッセージを入力してください"
       render 'index'
     end
 
