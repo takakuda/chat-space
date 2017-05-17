@@ -14,11 +14,11 @@ class MessagesController < ApplicationController
         format.html {
           redirect_to :root, notice: "メッセージを作成しました"
         }
-        format.json { render json: @message }
+        format.json { render 'json.jbuilder' }
       end
 
     else
-      flash.now[:alert] = "メッセージを入力してください"
+      # flash.now[:alert] = "メッセージを入力してください"
       render 'index'
     end
 
@@ -36,6 +36,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:body, :image).merge(group_id: params[:group_id], user_id: current_user.id)
+    params.require(:message).permit(:body, :image).merge(group_id: params[:group_id], user_id: current_user.id )
   end
 end
