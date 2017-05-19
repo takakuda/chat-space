@@ -1,22 +1,24 @@
 $(function() {
-  function build(message) {
-    var html =
+  function buildHTML(message) {
 
+// console.log(message);
+    var html =
     `<div class = "chat-main__contents-user">
       <p>
-      &{message.name}
+      ${message.name}
       </p>
       </div>
-      <div class = "hat-main__contents-time"
+      <div class = "chat-main__contents-time"
       <p>
       ${message.time}
       </p>
       </div>
-      <div class = "hat-main__contents-messages">
+      <div class = "chat-main__contents-messages">
       <p>
       ${message.body}
       </p>
       </div>`
+      // console.log(html)
 
       return html;
     }
@@ -27,28 +29,30 @@ $(function() {
   //   return html;
   // }
 
-$('#new_message').on('submit', function(e) {
+$(document).on('submit', '.form', function(e) {
   e.preventDefault();
   // var message = $(this)
   // var fd = new FormData(message[0])
   // var textField = $('#message_body');
   // var message = textField.val();
-  var form = $('#message_body');
-  var message = new FormData($('#new_message').get(0));
+  var form = $('.form');
+  var message = new FormData($('.form').get(0));
+  // console.log(message);
 
   $.ajax({
     type: 'POST',
     url: location.href,
     // data: fd,
-    date: message,
+    data: message,
     processData: false,
     contentType: false,
-    dateType: 'json'
+    dataType: 'json'
   })
 
   .done(function(data) {
+    console.log(data);
     var html = buildHTML(data);
-
+console.log(data);
        $('.chat-main__contents').append(html);
        // $('.js-form__text-field').val('');
        // $("input").prop("disabled", false)

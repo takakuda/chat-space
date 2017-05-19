@@ -7,14 +7,14 @@ class MessagesController < ApplicationController
   end
 
   def create
+    # binding.pry
     @message = Message.new(message_params)
 
     if @message.save
+      # binding.pry
       respond_to do |format|
-        format.html {
-          redirect_to :root, notice: "メッセージを作成しました"
-        }
-        format.json { render 'format.json' }
+        format.html { redirect_to :root, notice: "メッセージを作成しました" }
+        format.json
       end
 
     else
