@@ -3,19 +3,21 @@ $(function() {
 
     var html =
     `<div class = "chat-main__contents-user">
-      <p>
-      ${message.name}
-      </p>
+        <p>
+          ${message.name}
+        </p>
       </div>
+
       <div class = "chat-main__contents-time"
-      <p>
-      ${message.time}
-      </p>
+        <p>
+          ${message.time}
+        </p>
       </div>
+
       <div class = "chat-main__contents-messages">
-      <p>
-      ${message.body}
-      </p>
+        <p>
+          ${message.body}
+        </p>
       </div>`
 
       return html;
@@ -36,9 +38,7 @@ $(function() {
     })
 
     .done(function(data) {
-      console.log(data);
       var html = buildHTML(data);
-  console.log(data);
         $('.chat-main__contents').append(html);
         form.val('');
       })
