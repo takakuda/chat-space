@@ -2,22 +2,16 @@ $(function() {
   function buildHTML(message) {
 
     var html =
-    `<div class = "chat-main__contents-user">
-        <p>
+      `<div class = "chat-main__contents-user">
           ${message.name}
-        </p>
       </div>
 
-      <div class = "chat-main__contents-time"
-        <p>
+      <div class = "chat-main__contents-time">
           ${message.time}
-        </p>
       </div>
 
       <div class = "chat-main__contents-messages">
-        <p>
           ${message.body}
-        </p>
       </div>`
 
       return html;
