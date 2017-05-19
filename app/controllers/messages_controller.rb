@@ -7,13 +7,18 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = @messages.new(message_params)
+    @message = Message.new(message_params)
+
     if @message.save
-      redirect_to :root, notice: "メッセージを作成しました"
+      respond_to do |format|
+        format.html { redirect_to :root, notice: "メッセージを作成しました" }
+        format.json
+      end
+
     else
-      flash.now[:alert] = "メッセージを入力してください"
       render 'index'
     end
+
   end
 
   private
@@ -28,6 +33,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:body, :image).merge(group_id: params[:group_id])
+    params.require(:message).permit(:body, :image).merge(group_id: params[:group_id], user_id: current_user.id )
   end
 end

@@ -29,8 +29,8 @@ describe MessagesController, type: :controller do
     it "正しい画面が表示されているか" do
       expect(response).to render_template :index
     end
-    end
   end
+end
 
   describe 'POST #create' do
     let(:message_params) do
@@ -40,47 +40,55 @@ describe MessagesController, type: :controller do
           body: "test message"
         }
       }
-        end
-      let(:message_empty) do
+    end
+    let(:message_empty) do
         {
           group_id: group,
           message: {
             body: ""
           }
         }
-      end
+    end
 
-      context 'ログインしていない場合' do
+    context 'ログインしていない場合' do
         it '新規登録の画面に移動するか' do
         post :create, params: { group_id: group.id }
         expect(response).to redirect_to (new_user_session_path)
         end
-      end
+    end
 
     context '有効なパラメータの場合' do
+
       before do
       login_user user
-    end
+      end
+
       it '保存に成功した場合' do
         expect{
           post :create, params: params}.to change( Message, :count ).by(1)
       end
+
       it '保存が成功した後の画面に移動するか' do
         post :create, params: params
         expect(response).to redirect_to :root
       end
+
     end
+
     context '無効なパラメータの場合' do
       before do
       login_user user
     end
+
     it '保存に失敗した場合' do
       expect { post :create, params: message_empty }.to change(Message, :count).by(0)
     end
+
     it '保存が失敗して、元の画面に移動するか' do
       post :create, params: message_empty
       expect(response).to render_template :index
     end
-  end
+
+    end
   end
 end
