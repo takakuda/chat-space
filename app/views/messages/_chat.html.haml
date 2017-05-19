@@ -1,6 +1,7 @@
-%p.chat-main__contents-user
-  = @message.current_user.name
-%p.chat__date
-  = @message.created_at
-%p.chat__content
-  = @message.body
+- @messages[0,6] .each do |message|
+  .chat-main__contents-user
+    = message.user.name
+  .chat-main__contents-time
+    = message.created_at
+  .chat-main__contents-messages
+    = message.body

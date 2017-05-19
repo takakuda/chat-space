@@ -11,17 +11,7 @@
       %p.group__btn
         Edit
   .chat-main__contents
-    - @messages[0,6] .each do |message|
-      .chat-main__contents-user
-        = message.user.name
-      .chat-main__contents-time
-        = message.created_at
-      .chat-main__contents-messages
-        = message.body
-    / = render partial: 'chat', collection: @messages, as: :message
-    / .chat-main__contents-user takakuda kei
-    / .chat-main__contents-time 2017/05/01 18:03:47
-    / .chat-main__contents-messages なるほど
+    = render partial: 'chat'
 
   .chat-main__input
     .chat-main__input__send

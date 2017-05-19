@@ -34,5 +34,5 @@ gem 'omniauth-twitter'
 gem 'rails-controller-testing'
 
 group :test do
-  
+
 end
