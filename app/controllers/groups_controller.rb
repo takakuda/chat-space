@@ -12,14 +12,11 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(post_params)
-
+    @group.save
     if @group.save
-      respond_to do |format|
-        format.html { redirect_to :root, notice: "グループを作成しました" }
-        format.json
-    end
-
+      redirect_to :root, notice: "グループを作成しました"
     else
+      flash.now[:alert] = "グループ名を入力してください"
       render 'new'
     end
   end

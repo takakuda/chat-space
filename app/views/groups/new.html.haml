@@ -3,15 +3,20 @@
     %h1 新規チャットグループ
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label :name , 'グループ名'
+        .chat-group-form__label
+          = f.label :name , 'グループ名'
       .chat-group-form__field--right
-        = f.text_field :name, class: 'chat_group_name', placeholder: 'グループ名を入力してください'
+        = f.text_field :name, class: 'chat-group-form__input', id: 'chat_group_name', placeholder: 'グループ名を入力してください'
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label :users, 'チャットメンバー'
+        .chat-group-form__label
+          = f.label :users, 'チャットメンバー'
       .chat-group-form__field--right
-        = f.collection_check_boxes(:user_ids, User.all, :id, :name)
-        .chat-group-form__field.clearfix
-          .chat-group-form__field--left
-          .chat-group-form__field--right
-          = f.submit class: 'chat-group-form__action-btn', type: 'submit', value: 'Save'
+        .chat-group-form__search.clearfix
+          #user-search-field.chat-group-form__input
+            = f.collection_check_boxes(:user_ids, User.all, :id, :name)
+      #user-search-result
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+      .chat-group-form__field--right
+        = f.submit class: 'chat-group-form__action-btn', type: 'submit', value: 'Save'
