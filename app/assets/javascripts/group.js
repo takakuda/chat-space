@@ -20,5 +20,16 @@ $(function() {
     return html
   }
 
+  $('#user-search-field').on('keyup', function(e) {
+    e.preventDefault();
+    var input = $.trim($(this).val());
 
+    $.ajax({
+      url: '/users/search',
+      type: 'GET'
+      data: ('keyword=' + input),
+      dataType: 'json'
+    })
+  })
 })
+
