@@ -13,20 +13,23 @@
           = f.label :users, 'チャットメンバー'
       .chat-group-form__field--right
         .chat-group-form__search.clearfix
-          / #user-search-field.chat-group-form__input
-          /   = f.collection_check_boxes(:user_ids, User.all, :id, :name)
+        %input#user-search-field{ class: "chat-group-form__input",placeholder: "検索するユーザー名を入力してください", autocomplete: "off" }
+        #user-search-result
 
-
-          #chat-group-users
-            .chat-group-user.clearfix
-              %p.chat-group-user__name
-                = current_user.name
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        .chat-group-form__label
+          = f.label '参加メンバー'
+      .chat-group-form__field--right
+        #chat-group-users
+          .chat-group-user.clearfix
+            %p.chat-group-user__name
+              = current_user.name
           #chat-group-users
             #chat-group-user-22.chat-group-user.clearfix
               %input{:name => "chat_group[user_ids][]", :type => "hidden", :value => "22"}
                 %p.chat-group-user__name seo_kyohei
 
-      #user-search-result
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
