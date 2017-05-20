@@ -30,6 +30,13 @@ $(function() {
       data: ('keyword=' + input),
       dataType: 'json'
     })
+
+    .done(function(data) {
+      $('#user-search-result').find('.chat-group-user').remove();
+      $(data).each(function(i, user) {
+        appendList(user)
+      })
+    })
   })
 })
 
