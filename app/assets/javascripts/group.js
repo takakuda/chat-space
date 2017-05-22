@@ -49,6 +49,9 @@ $(function() {
     add_user.parent().remove();
   })
 
-  
+    $('#chat-group-users').on('click', '.chat-group-user__btn--remove', function() {
+      var id = $(this).data('user-id');
+      $(this).parent().remove();
+    })
 })
 
