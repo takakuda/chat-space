@@ -38,5 +38,17 @@ $(function() {
       })
     })
   })
+
+  $('#user-search-result').on('click', '.chat-group-user__btn--add', function() {
+    var add_user = $(this);
+    var id = add_user.data('user_id');
+    var name = add_user.data('user-name');
+    var html = buildHTML(id, name);
+
+    $('#chat-group-user').append(html);
+    add_user.parent().remove();
+  })
+
+  
 })
 
