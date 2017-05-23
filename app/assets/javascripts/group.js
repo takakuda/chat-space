@@ -25,6 +25,7 @@ $(function() {
   $('#user-search-field').on('keyup', function(e) {
     e.preventDefault();
     var input = $.trim($(this).val());
+      if (input.length !== 0)
 
     $.ajax({
       type: 'GET',
