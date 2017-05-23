@@ -40,6 +40,8 @@ class GroupsController < ApplicationController
   private
 
   def post_params
+      user_ids = params[:group]["user_ids"]
+      usesr_ids.push(current_user.id)
       params.require(:group).permit(:name, user_ids: [])
   end
 
