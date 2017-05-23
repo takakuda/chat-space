@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  scope :search_user, ->(name){ where('name LIKE(?)', "%#{name}%")}
+
   def update_without_current_password(params, *options)
     params.delete(:current_password)
 
@@ -18,5 +20,4 @@ class User < ApplicationRecord
     result
   end
 
-  scope :search_user, ->(name){ where('name LIKE(?)', "%#{name}%")}
 end
