@@ -1,16 +1,31 @@
 = form_for @group do |f|
   .chat-group-form
+    %h1
+      = title
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label :name , 'グループ名'
+        = f.label "グループ名", class: 'chat-group-form__label'
       .chat-group-form__field--right
-        = f.text_field :name, class: 'chat_group_name', placeholder: 'グループ名を入力してください'
+        = f.text_field :name, class: 'chat-group-form__input', placeholder: 'グループ名を入力してください'
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label :users, 'チャットメンバー'
+        = f.label 'チャットメンバー', class: 'chat-group-form__label'
       .chat-group-form__field--right
-        = f.collection_check_boxes(:user_ids, User.all, :id, :name)
-        .chat-group-form__field.clearfix
-          .chat-group-form__field--left
-          .chat-group-form__field--right
-          = f.submit class: 'chat-group-form__action-btn', type: 'submit', value: 'Save'
+        .chat-group-form__search.clearfix
+          = text_field_tag :keyword, "", id: 'user-search-field', class: 'chat-group-form__input', placeholder: "追加したいユーザー名を入力してください", type: 'text'
+        #user-search-result
+
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = f.label :users, 'チャットメンバー', class: 'chat-group-form__label'
+      .chat-group-form__field--right
+        #chat-group-users
+          .chat-group-user.clearfix
+            = f.hidden_field :user, name: "group[user_ids][]", value: current_user.id
+            %p.chat-group-user__name
+              = current_user.name
+
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+      .chat-group-form__field--right
+        = f.submit class: 'chat-group-form__action-btn', type: 'submit', value: 'Save'

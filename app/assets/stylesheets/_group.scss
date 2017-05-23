@@ -59,6 +59,9 @@
     .chat-group-form__field--right {
       float: right;
       width: 70%;
+      .chat_group_name {
+        width: 70%;
+      }
     }
 
     .chat-group-form__label {
