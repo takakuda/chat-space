@@ -17,4 +17,6 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
+
+  scope :search_user, ->(name){ where('name LIKE(?)', "%#{name}%")}
 end

@@ -1,6 +1,6 @@
 = form_for @group do |f|
   .chat-group-form
-    %h1 新規チャットグループ
+    %h1 = title
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         = f.label "グループ名", class: 'chat-group-form__label'
@@ -12,7 +12,6 @@
       .chat-group-form__field--right
         .chat-group-form__search.clearfix
           = text_field_tag :keyword, "", id: 'user-search-field', class: 'chat-group-form__input', placeholder: "追加したいユーザー名を入力してください", type: 'text'
-        / %input#user-search-field{ class: "chat-group-form__input",placeholder: "検索するユーザー名を入力してください", autocomplete: "off" }
         #user-search-result
 
     .chat-group-form__field.clearfix
