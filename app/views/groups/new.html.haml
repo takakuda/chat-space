@@ -1,6 +1,7 @@
 = form_for @group do |f|
   .chat-group-form
-    %h1 新規チャットグループ
+    %h1
+      = title
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         = f.label "グループ名", class: 'chat-group-form__label'
