@@ -18,5 +18,8 @@ CarrierWave.configure do |config|
   when 'production'
     config.fog_directory = 'chat-space-bucket-takakuda'
     config.asset_host = 'https://s3.amazonaws.com/chat-space-bucket-takakuda'
+  when 'test'
+    config.fog_directory = 'chat-space-bucket-takakuda'
+    config.asset_host = 'https://s3.amazonaws.com/chat-space-bucket-takakuda'
   end
 end
