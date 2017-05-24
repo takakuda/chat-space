@@ -1,5 +1,10 @@
 $(function() {
   function buildHTML(message) {
+    var message_Image = '';
+    if (message.image) {
+      console.log(message)
+      message_Image = '<img src="${message.image.url}" class="chat-main__contents-messages">';
+    }
 
     var html =
       `<div class = "chat-main__contents-user">
@@ -17,10 +22,10 @@ $(function() {
       return html;
     }
 
-  $(document).on('submit', '.form', function(e) {
+  $("#new_message").on('submit', function(e) {
     e.preventDefault();
-    var form = $('.form');
-    var message = new FormData($('.form').get(0));
+    var form = $(this);
+    var message = new FormData(form.get(0));
 
     $.ajax({
       type: 'POST',
@@ -32,13 +37,15 @@ $(function() {
     })
 
     .done(function(data) {
-      var html = buildHTML(data);
+        var html = buildHTML(data);
         $('.chat-main__contents').append(html);
         form.val('');
+        $('input').prop("disabled", false);
       })
 
     .fail(function(data) {
       alert('メッセージが入力されていません');
+      $('input').prop("disabled", false);
     });
     return false;
   });

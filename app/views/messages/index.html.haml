@@ -18,7 +18,8 @@
       = form_for [@group, @message], html: { class: "form js-form" } do |f|
         %p
           = f.text_field :body, class: "submit__content js-form__text-field", placeholder: 'メッセージを入力してください'
-          %i.fa.fa-file-image-o.fa-lg{"aria-hidden": "true"}
-            = f.file_field :image, class: "file-image"
+          = f.label :image do
+            %i.fa.fa-file-image-o.fa-lg{"aria-hidden": "true"}
+            = f.file_field :image 
         %p
           = f.submit "Send", class: "submit__btn", name: "Commit"

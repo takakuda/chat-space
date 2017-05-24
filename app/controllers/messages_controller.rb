@@ -8,7 +8,6 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-
     if @message.save
       respond_to do |format|
         format.html { redirect_to :root, notice: "メッセージを作成しました" }

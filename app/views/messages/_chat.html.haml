@@ -1,9 +1,9 @@
 - @messages[0,6] .each do |message|
   .chat-main__contents-user
-    / = message.user.name
+    = message.user.name
   .chat-main__contents-time
     = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .chat-main__contents-messages
     = message.body
-  .chat-main__contents-messages
-  / = image_tag item.image.url
+  .chat-main__contents-image
+    = message.image
