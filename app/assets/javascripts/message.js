@@ -3,6 +3,7 @@ $(function() {
     var message_Image = '';
     if (message.image) {
       console.log(message)
+  
     }
 
     var html =
