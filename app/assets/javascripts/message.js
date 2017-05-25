@@ -5,7 +5,8 @@ $(function() {
     }
 
     var html =
-      `<div class = "chat-main__contents-user">
+    `<div class = "chat-main__contents" id = "${message.id}">
+      <div class = "chat-main__contents-user">
           ${message.name}
       </div>
 
