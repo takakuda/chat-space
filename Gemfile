@@ -12,6 +12,7 @@ gem 'carrierwave', '~>1.0'
 gem 'fog'
 gem 'dotenv-rails'
 gem 'mini_magick'
+gem 'rmagick'
 
 
 

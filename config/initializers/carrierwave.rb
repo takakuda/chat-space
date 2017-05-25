@@ -10,7 +10,7 @@ require 'carrierwave/storage/fog'
      aws_secret_access_key: ENV['SECRET_ACCESS_KEY'],
      region: 'ap-northeast-1'
    }
-
+    config.fog_public = true
   case Rails.env
     when 'development'
       config.fog_directory = 'chat-space-bucket-takakuda'

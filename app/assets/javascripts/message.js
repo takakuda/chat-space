@@ -3,7 +3,6 @@ $(function() {
     var message_Image = '';
     if (message.image) {
       console.log(message)
-      message_Image = '<img src="${message.image.url}" class="chat-main__contents-messages">';
     }
 
     var html =
@@ -17,6 +16,10 @@ $(function() {
 
       <div class = "chat-main__contents-messages">
           ${message.body}
+      </div>
+
+      <div class = "chat-main__contents-image">
+          ${message.image}
       </div>`
 
       return html;
