@@ -53,3 +53,29 @@ $(function() {
     return false;
   });
 });
+
+  if (window.location.href.match(/messages/)) {
+    setInterval(function(){
+      var last_id = $('.chat-main__contents').last().attr('id');
+      $.ajax({
+        type: 'GET',
+        url: window.location.href,
+        data: { id:last_id },
+        dataType: 'json'
+      })
+
+      .done(function(data) {
+        var insertHTML = '';
+        data.messages.forEach(function(message) {
+          if (message.id > last_id) {
+            insertHTML += buildHTML(message);
+          }
+          $('chat-main__contents').append(insertHTML);
+        });
+      })
+      .fail(function(data) {
+        alert('自動更新に失敗');
+      });
+    }, 5000);
+  }
+  });
