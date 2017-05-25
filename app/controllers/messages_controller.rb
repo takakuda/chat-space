@@ -4,6 +4,15 @@ class MessagesController < ApplicationController
 
   def index
     @groups = current_user.groups.order(id: :DESC).limit(5)
+    respond_to do |format|
+      format.html
+      format.json {
+        puts "++++++++"
+        puts params[:id]
+        puts "++++++++"
+        @messages = Message.where("id > ?", params[:id])
+      }
+    end
   end
 
   def create
@@ -29,6 +38,7 @@ class MessagesController < ApplicationController
   def set_message
     @message = Message.new
     @messages = @group.messages
+    puts "++++ MessageController#set_messages ++++"
   end
 
   def message_params
