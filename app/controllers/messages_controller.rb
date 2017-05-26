@@ -7,10 +7,18 @@ class MessagesController < ApplicationController
     respond_to do |format|
       format.html
       format.json {
-        puts "++++++++"
-        puts params[:id]
-        puts "++++++++"
-        @messages = Message.where("id > ?", params[:id])
+        # # puts "vvvvvv params vvvvvvv"
+        # # # puts params.to_s
+        # binding.pry
+        # puts "vvvvvv params[:id] vvvvvvv"
+        # puts params[:last_id]
+        @messages = @group.messages.where("id > ?", params[:last_id])
+        puts "================================"
+        puts @messages.size
+        puts "================================"
+        puts "================================"
+        # puts @messages[0].user
+        puts "================================"
       }
     end
   end
@@ -32,13 +40,13 @@ class MessagesController < ApplicationController
   private
 
   def set_group
-    @group = Group.find(params[:group_id])
+    @group = current_user.groups.find(params[:group_id])
+    @groups = current_user.groups
   end
 
   def set_message
     @message = Message.new
-    @messages = @group.messages
-    puts "++++ MessageController#set_messages ++++"
+    @messages = @group.messages.includes(:user)
   end
 
   def message_params
