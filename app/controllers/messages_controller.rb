@@ -4,12 +4,6 @@ class MessagesController < ApplicationController
 
   def index
     @groups = current_user.groups.order(id: :DESC).limit(5)
-    respond_to do |format|
-      format.html
-      format.json {
-        @messages = @group.messages.where("id > ?", params[:last_id])
-      }
-    end
   end
 
   def create
@@ -29,13 +23,12 @@ class MessagesController < ApplicationController
   private
 
   def set_group
-    @group = current_user.groups.find(params[:group_id])
-    @groups = current_user.groups
+    @group = Group.find(params[:group_id])
   end
 
   def set_message
     @message = Message.new
-    @messages = @group.messages.includes(:user)
+    @messages = @group.messages
   end
 
   def message_params
