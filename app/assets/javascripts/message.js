@@ -5,7 +5,8 @@ $(function() {
     }
 
     var html =
-      `<div class = "chat-main__contents-user">
+    `<div class = "chat-main__contents" message_id="${message.id}">
+      <div class = "chat-main__contents-user">
           ${message.name}
       </div>
 
@@ -19,7 +20,8 @@ $(function() {
 
       <div class = "chat-main__contents-image">
           ${message.image}
-      </div>`
+      </div>
+      </div>`;
 
       return html;
     }
@@ -39,11 +41,11 @@ $(function() {
     })
 
     .done(function(data) {
-        var html = buildHTML(data);
-        $('.chat-main__contents').append(html);
-        form.val('');
-        $('input').prop("disabled", false);
-      })
+      var html = buildHTML(data);
+      $('.chat-main__contents').append(html);
+      form.val('');
+      $('input').prop("disabled", false);
+    })
 
     .fail(function(data) {
       alert('メッセージが入力されていません');
@@ -51,4 +53,28 @@ $(function() {
     });
     return false;
   });
+
+  if (window.location.href.match(/messages/)) {
+    setInterval(function(){
+      var last_id = $('.chat-main__contents').last().attr('message_id');
+      $.ajax({
+        type: 'GET',
+        url: window.location.href,
+        data: {
+          last_id: last_id,
+        },
+        dataType: 'json'
+      })
+
+      .done(function(data) {
+        var insertHTML = '';
+        data.messages.forEach(function(message) {
+          insertHTML += buildHTML(message);
+          $('.chat-main__contents').append(insertHTML);
+        });
+      })
+      .fail(function(data) {
+      });
+    }, 5000);
+  }
 });

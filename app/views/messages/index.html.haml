@@ -11,7 +11,7 @@
       %p.group__btn
         Edit
   .chat-main__contents
-    = render partial: 'chat'
+    = render @messages
 
   .chat-main__input
     = form_for [@group, @message], html: { class: "form js-form" } do |f|
@@ -19,4 +19,4 @@
       = f.label :image do
         = f.file_field :image, style: "display:none;"
         %i.fa.fa-file-image-o.fa-lg
-      = f.submit "Send", class: "submit__btn", name: "Commit"
+        = f.submit "Send", class: "submit__btn", name: "Commit"
