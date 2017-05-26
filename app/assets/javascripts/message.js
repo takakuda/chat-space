@@ -27,7 +27,6 @@ $(function() {
     }
 
   $("#new_message").on('submit', function(e) {
-    console.log("submit");
     e.preventDefault();
     var form = $(this);
     var message = new FormData(form.get(0));
@@ -42,7 +41,6 @@ $(function() {
     })
 
     .done(function(data) {
-      console.log("submit成功");
       var html = buildHTML(data);
       $('.chat-main__contents').append(html);
       form.val('');
@@ -50,7 +48,6 @@ $(function() {
     })
 
     .fail(function(data) {
-      console.log("submit失敗");
       alert('メッセージが入力されていません');
       $('input').prop("disabled", false);
     });
