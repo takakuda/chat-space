@@ -11,7 +11,7 @@
       %p.group__btn
         Edit
   .chat-main__contents
-    = render partial: 'chat', collection: @messages, as: :message
+    = render @messages
 
   .chat-main__input
     = form_for [@group, @message], html: { class: "form js-form" } do |f|

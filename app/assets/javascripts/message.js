@@ -56,7 +56,7 @@ $(function() {
 
   if (window.location.href.match(/messages/)) {
     setInterval(function(){
-      var last_id = $('.chat-main__contents').last().attr('message_id') || 0;
+      var last_id = $('.chat-main__contents').last().attr('message_id');
       $.ajax({
         type: 'GET',
         url: window.location.href,
