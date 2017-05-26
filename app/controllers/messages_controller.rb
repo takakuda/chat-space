@@ -7,18 +7,7 @@ class MessagesController < ApplicationController
     respond_to do |format|
       format.html
       format.json {
-        # # puts "vvvvvv params vvvvvvv"
-        # # # puts params.to_s
-        # binding.pry
-        # puts "vvvvvv params[:id] vvvvvvv"
-        # puts params[:last_id]
         @messages = @group.messages.where("id > ?", params[:last_id])
-        puts "================================"
-        puts @messages.size
-        puts "================================"
-        puts "================================"
-        # puts @messages[0].user
-        puts "================================"
       }
     end
   end

@@ -60,8 +60,6 @@ $(function() {
   if (window.location.href.match(/messages/)) {
     setInterval(function(){
       var last_id = $('.chat-main__contents').last().attr('message_id') || 0;
-      console.log("===================last_id=============");
-      console.log(last_id);
       $.ajax({
         type: 'GET',
         url: window.location.href,
@@ -69,24 +67,16 @@ $(function() {
           last_id: last_id,
         },
         dataType: 'json'
-        // processData: false,
-        // contentType: false
       })
 
       .done(function(data) {
-        console.log("setInterval成功");
-        console.log(data)
         var insertHTML = '';
         data.messages.forEach(function(message) {
-          // if (message.id > last_id) {
           insertHTML += buildHTML(message);
-          // }
           $('.chat-main__contents').append(insertHTML);
         });
       })
       .fail(function(data) {
-        console.log("setInterval失敗");
-        // alert('自動更新に失敗');
       });
     }, 5000);
   }
